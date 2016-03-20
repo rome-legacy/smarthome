@@ -5,20 +5,27 @@
         xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
 
     <!-- Sample Thing Type -->
-    <thing-type id="sample">
+    <thing-type id="alarm">
         <label>Homie Binding Thing</label>
         <description>Sample thing for Homie Binding</description>
 
         <channels>
-            <channel id="channel1" typeId="sample-channel"/>
+            <channel id="channelPing" typeId="ping-channel"/>
         </channels>
+        <config-description>
+            <parameter name="status" type="integer" required="false">
+                <label>HTTP Status</label>
+                <description>todo...</description>
+            </parameter>
+        </config-description>
     </thing-type>
 
     <!-- Sample Channel Type -->
-    <channel-type id="sample-channel">
-        <item-type>homieItem</item-type>
-        <label>Homie Binding Channel</label>
-        <description>Sample channel for Homie Binding</description>
+    <channel-type id="ping-channel">
+        <item-type>Number</item-type>
+        <label>Ping</label>
+        <description>Homie-Alarm-Ping</description>
+        <state readOnly="true"/>
     </channel-type>
 
 </thing:thing-descriptions>

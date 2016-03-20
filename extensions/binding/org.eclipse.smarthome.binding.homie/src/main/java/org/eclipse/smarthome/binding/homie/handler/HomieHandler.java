@@ -7,7 +7,7 @@
  */
 package org.eclipse.smarthome.binding.homie.handler;
 
-import static org.eclipse.smarthome.binding.homie.HomieBindingConstants.*;
+import static org.eclipse.smarthome.binding.homie.HomieBindingConstants.CHANNEL_PING;
 
 import org.eclipse.smarthome.core.thing.ChannelUID;
 import org.eclipse.smarthome.core.thing.Thing;
@@ -20,20 +20,25 @@ import org.slf4j.LoggerFactory;
 /**
  * The {@link HomieHandler} is responsible for handling commands, which are
  * sent to one of the channels.
- * 
+ *
  * @author Roman - Initial contribution
  */
 public class HomieHandler extends BaseThingHandler {
 
     private Logger logger = LoggerFactory.getLogger(HomieHandler.class);
 
-	public HomieHandler(Thing thing) {
-		super(thing);
-	}
+    public HomieHandler(Thing thing) {
+        super(thing);
+        logger.info("HomieHandler::constructor()");
+    }
 
-	@Override
-	public void handleCommand(ChannelUID channelUID, Command command) {
-        if(channelUID.getId().equals(CHANNEL_1)) {
+    @Override
+    public void handleCommand(ChannelUID channelUID, Command command) {
+        logger.info("HomieHandler::handleCommnad()");
+
+        logger.info(getThing().getConfiguration().get("").toString());
+
+        if (channelUID.getId().equals(CHANNEL_PING)) {
             // TODO: handle command
 
             // Note: if communication with thing fails for some reason,
@@ -41,7 +46,7 @@ public class HomieHandler extends BaseThingHandler {
             // updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR,
             // "Could not control device at IP address x.x.x.x");
         }
-	}
+    }
 
     @Override
     public void initialize() {
@@ -55,5 +60,10 @@ public class HomieHandler extends BaseThingHandler {
         // as expected. E.g.
         // updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.CONFIGURATION_ERROR,
         // "Can not access device as username and/or password are invalid");
+    }
+
+    @Override
+    public void dispose() {
+        // TODO: dispose
     }
 }

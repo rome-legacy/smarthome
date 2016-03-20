@@ -10,19 +10,19 @@ package org.eclipse.smarthome.binding.homie;
 import org.eclipse.smarthome.core.thing.ThingTypeUID;
 
 /**
- * The {@link HomieBinding} class defines common constants, which are 
+ * The {@link HomieBinding} class defines common constants, which are
  * used across the whole binding.
- * 
+ *
  * @author Roman - Initial contribution
  */
 public class HomieBindingConstants {
 
     public static final String BINDING_ID = "homie";
-    
+
     // List of all Thing Type UIDs
-    public final static ThingTypeUID THING_TYPE_SAMPLE = new ThingTypeUID(BINDING_ID, "sample");
+    public final static ThingTypeUID THING_TYPE_ALARM = new ThingTypeUID(BINDING_ID, "alarm");
 
     // List of all Channel ids
-    public final static String CHANNEL_1 = "channel1";
+    public final static String CHANNEL_PING = "channelPing";
 
 }
