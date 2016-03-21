@@ -1,0 +1,5 @@
+sitemap homie label="Homie Sitemap" {
+	Frame label="Homie Items" {
+		Text item=Ping_Status label="Server Status"
+	}
+}

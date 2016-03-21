@@ -1,0 +1,25 @@
+//var Timer timer
+//
+//rule "do something if item state is 0 for more than 10 seconds"
+//when
+//    Item MyItem changed
+//then
+//    if(Ping_Status.state==0) {
+//        timer = createTimer(now.plusSeconds(10)) [|
+//            // do something! 
+//        ]
+//    } else {
+//        if(timer!=null) {
+//            timer.cancel
+//            timer = null
+//        }
+//    }
+//end
+//    
+rule "Initialize HOMIE items"
+when
+  System started
+then
+  Ping_Status.sendCommand("")
+end
+

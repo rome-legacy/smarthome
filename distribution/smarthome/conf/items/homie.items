@@ -1,0 +1,1 @@
+Number Ping_Status 		"Alarm Service Ping:Status"	<none> { channel="homie:alarm:ping:channelPing" }
